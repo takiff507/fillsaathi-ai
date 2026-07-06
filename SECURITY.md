@@ -1,47 +1,24 @@
-# Security Policy
+# Security
 
-FillSaathi AI is designed as a privacy-first form filling assistant.
+FillSaathi AI is a privacy-first form help website.
 
-## Secret handling
+## User safety rules
 
-Do not place any API key, backend URL with secret token, database password, private certificate, or `.env` value in public frontend files.
+Users should never share private values with unknown websites or tools.
 
-Unsafe places for secrets:
+Examples of private values:
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- public images or JSON files
-- GitHub commits
-- browser local storage
+- Aadhaar or other identity numbers
+- PAN or tax ID
+- bank account number
+- card number, CVV, expiry date
+- OTP, password, PIN, UPI PIN
+- private documents with visible personal details
 
-Safe place for secrets:
+## FillSaathi rule
 
-- server-side environment variables
-- private backend runtime configuration
-- hosting provider secret manager
+FillSaathi should guide users on what a field means, but users should fill private values manually on the original trusted form.
 
-## Sensitive user data
+## Current website
 
-The product should warn users before they submit or upload:
-
-- Aadhaar or other ID numbers
-- PAN or tax IDs
-- bank account numbers
-- IFSC with account details
-- card numbers, CVV, expiry date
-- OTP, password, UPI PIN
-- full documents with visible private values
-
-## Recommended production design
-
-1. Extract only field labels from a form image.
-2. Mask sensitive values before any AI request.
-3. Send only the minimum required text to the backend.
-4. Store nothing by default.
-5. Add a clear delete option if uploads are supported.
-6. Keep logs free of private user values.
-
-## Current demo
-
-The current website is a static browser-only demo. It does not call a backend and does not include API keys.
+This repo contains a static website demo only.
