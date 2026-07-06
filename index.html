@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FillSaathi AI - Private Form Filling Assistant</title>
+  <meta name="description" content="FillSaathi AI helps you understand physical and online forms without sharing sensitive details." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="FillSaathi AI home">
+        <span class="brand-mark">F</span>
+        <span>FillSaathi AI</span>
+      </a>
+      <div class="nav-links">
+        <a href="#demo">Try demo</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#how">How it works</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Private form filling helper</p>
+        <h1>Understand any form before you fill it.</h1>
+        <p class="hero-text">FillSaathi AI explains confusing form fields, warns about sensitive details, and gives a simple checklist so you can fill physical or online forms safely.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Try the safe demo</a>
+          <a class="button ghost" href="#privacy">See privacy rules</a>
+        </div>
+        <div class="trust-row" aria-label="Privacy promises">
+          <span>No keys in frontend</span>
+          <span>No GitHub Actions</span>
+          <span>Browser-only demo</span>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="FillSaathi AI preview card">
+        <div class="card-top">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="paper-preview">
+          <div class="paper-line wide"></div>
+          <div class="field-row"><span>Name</span><strong>Use full legal name</strong></div>
+          <div class="field-row danger"><span>Account No.</span><strong>Fill manually. Do not upload.</strong></div>
+          <div class="field-row"><span>Signature</span><strong>Sign like bank record</strong></div>
+          <div class="field-row"><span>Documents</span><strong>Attach self-attested copies</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">Browser-only demo</p>
+        <h2>Paste form field names. Get safe instructions.</h2>
+        <p>This demo does not call any backend. It runs locally in your browser and only creates a guide from the text you type.</p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="input-panel panel">
+          <label for="formText">Paste field names from a form</label>
+          <textarea id="formText" spellcheck="false" placeholder="Example:\nName\nDate of Birth\nAddress\nAccount Number\nIFSC\nPAN\nNominee Name\nSignature"></textarea>
+          <div class="demo-actions">
+            <button id="generateBtn" class="button primary" type="button">Generate guide</button>
+            <button id="sampleBtn" class="button soft" type="button">Use sample</button>
+            <button id="clearBtn" class="button text" type="button">Clear</button>
+          </div>
+          <p class="small-note">Do not type real Aadhaar, PAN, account number, OTP, password, CVV, or UPI PIN here.</p>
+        </div>
+
+        <div class="output-panel panel" aria-live="polite">
+          <div class="output-header">
+            <div>
+              <p class="eyebrow">Guide output</p>
+              <h3>Safe filling steps</h3>
+            </div>
+            <button id="copyBtn" class="copy-btn" type="button">Copy</button>
+          </div>
+          <div id="result" class="result empty-state">
+            <p>Paste form fields and click generate. Your guide will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section shell split-section">
+      <div>
+        <p class="eyebrow">Physical form support</p>
+        <h2>How it helps with paper forms</h2>
+      </div>
+      <div class="steps">
+        <article>
+          <span>1</span>
+          <h3>Read the fields</h3>
+          <p>User enters field names or a future private OCR backend can extract labels from a blank form image.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Explain each box</h3>
+          <p>The assistant tells what to write, the right format, and where signature, date, photo, or documents are needed.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Protect sensitive values</h3>
+          <p>For bank, ID, OTP, and password fields, it tells users to fill manually and never upload the actual value.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="privacy" class="section shell">
+      <div class="privacy-card">
+        <div>
+          <p class="eyebrow">Privacy-first product rule</p>
+          <h2>AI guides the user. It does not need private numbers.</h2>
+          <p>FillSaathi AI should never ask users to send real bank details, identity numbers, passwords, OTPs, card details, UPI PINs, or full documents with visible sensitive data.</p>
+        </div>
+        <ul class="privacy-list">
+          <li>Keep API keys only on backend environment variables.</li>
+          <li>Mask sensitive details before sending anything to AI.</li>
+          <li>Do not store uploaded forms unless the user clearly agrees.</li>
+          <li>Give manual-fill warnings for high-risk fields.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section shell categories">
+      <div class="section-heading compact">
+        <p class="eyebrow">Useful for</p>
+        <h2>One assistant for common forms</h2>
+      </div>
+      <div class="category-grid">
+        <span>Bank forms</span>
+        <span>KYC forms</span>
+        <span>Job applications</span>
+        <span>College forms</span>
+        <span>Loan forms</span>
+        <span>Insurance forms</span>
+        <span>Government forms</span>
+        <span>Seller onboarding</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <p>FillSaathi AI - Form samjho, safely bharo.</p>
+    <p>This static demo contains no backend secrets.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
